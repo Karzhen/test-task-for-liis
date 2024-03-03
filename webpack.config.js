@@ -1,7 +1,8 @@
 const path = require('path');
 const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const baseConfig = {
     entry: {
@@ -9,7 +10,7 @@ const baseConfig = {
     },
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: '[name].bundle.js',
+        filename: 'index.js',
     },
     module: {
         rules: [
@@ -41,6 +42,11 @@ const baseConfig = {
             filename: 'index.html',
         }),
         new CleanWebpackPlugin(),
+        // new FaviconsWebpackPlugin({
+        //     logo: path.resolve(__dirname, './src/favicon/favicon-32x32.png'),
+        //     outputPath: '',
+        //     publicPath: '/favicon',
+        // }),
     ],
 }
 

@@ -1,0 +1,332 @@
+{
+  "location": {
+    "name": "Saint Petersburg",
+    "region": "Saint Petersburg City",
+    "country": "Russia",
+    "lat": 59.89,
+    "lon": 30.26,
+    "tz_id": "Europe/Moscow",
+    "localtime_epoch": 1709485484,
+    "localtime": "2024-03-03 20:04"
+  },
+  "current": {
+    "last_updated_epoch": 1709485200,
+    "last_updated": "2024-03-03 20:00",
+    "temp_c": 3,
+    "temp_f": 37.4,
+    "is_day": 0,
+    "condition": {
+      "text": "Ясно",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/113.png",
+      "code": 1000
+    },
+    "wind_mph": 9.4,
+    "wind_kph": 15.1,
+    "wind_degree": 150,
+    "wind_dir": "SSE",
+    "pressure_mb": 1025,
+    "pressure_in": 30.27,
+    "precip_mm": 0,
+    "precip_in": 0,
+    "humidity": 70,
+    "cloud": 0,
+    "feelslike_c": 1,
+    "feelslike_f": 33.8,
+    "vis_km": 10,
+    "vis_miles": 6,
+    "uv": 1,
+    "gust_mph": 9.4,
+    "gust_kph": 15.1
+  },
+  "forecast": {
+    "forecastday": [
+      {
+        "date": "2024-03-03",
+        "date_epoch": 1709424000,
+        "day": {
+          "maxtemp_c": 3.2,
+          "maxtemp_f": 37.8,
+          "mintemp_c": -2.5,
+          "mintemp_f": 27.6,
+          "avgtemp_c": 0.6,
+          "avgtemp_f": 33.1,
+          "maxwind_mph": 10.1,
+          "maxwind_kph": 16.2,
+          "totalprecip_mm": 0.01,
+          "totalprecip_in": 0,
+          "totalsnow_cm": 0,
+          "avgvis_km": 7,
+          "avgvis_miles": 4,
+          "avghumidity": 90,
+          "daily_will_it_rain": 0,
+          "daily_chance_of_rain": 0,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 0,
+          "condition": {
+            "text": "Дымка",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/143.png",
+            "code": 1030
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:51 AM",
+          "sunset": "06:32 PM",
+          "moonrise": "04:06 AM",
+          "moonset": "08:49 AM",
+          "moon_phase": "Last Quarter",
+          "moon_illumination": 57,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-04",
+        "date_epoch": 1709510400,
+        "day": {
+          "maxtemp_c": 2.8,
+          "maxtemp_f": 37.1,
+          "mintemp_c": -3.7,
+          "mintemp_f": 25.3,
+          "avgtemp_c": -0.8,
+          "avgtemp_f": 30.6,
+          "maxwind_mph": 10.5,
+          "maxwind_kph": 16.9,
+          "totalprecip_mm": 0.02,
+          "totalprecip_in": 0,
+          "totalsnow_cm": 0,
+          "avgvis_km": 7,
+          "avgvis_miles": 4,
+          "avghumidity": 87,
+          "daily_will_it_rain": 0,
+          "daily_chance_of_rain": 0,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 7,
+          "condition": {
+            "text": "Солнечно",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:48 AM",
+          "sunset": "06:35 PM",
+          "moonrise": "05:46 AM",
+          "moonset": "09:04 AM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 46,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-05",
+        "date_epoch": 1709596800,
+        "day": {
+          "maxtemp_c": -1.2,
+          "maxtemp_f": 29.8,
+          "mintemp_c": -4.4,
+          "mintemp_f": 24.2,
+          "avgtemp_c": -2.7,
+          "avgtemp_f": 27.2,
+          "maxwind_mph": 11.6,
+          "maxwind_kph": 18.7,
+          "totalprecip_mm": 0.01,
+          "totalprecip_in": 0,
+          "totalsnow_cm": 0,
+          "avgvis_km": 10,
+          "avgvis_miles": 6,
+          "avghumidity": 73,
+          "daily_will_it_rain": 0,
+          "daily_chance_of_rain": 0,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 0,
+          "condition": {
+            "text": "Солнечно",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:45 AM",
+          "sunset": "06:37 PM",
+          "moonrise": "07:04 AM",
+          "moonset": "09:49 AM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 36,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-06",
+        "date_epoch": 1709683200,
+        "day": {
+          "maxtemp_c": 1,
+          "maxtemp_f": 33.8,
+          "mintemp_c": -5.3,
+          "mintemp_f": 22.5,
+          "avgtemp_c": -2.8,
+          "avgtemp_f": 27,
+          "maxwind_mph": 6.5,
+          "maxwind_kph": 10.4,
+          "totalprecip_mm": 0,
+          "totalprecip_in": 0,
+          "totalsnow_cm": 0,
+          "avgvis_km": 9.3,
+          "avgvis_miles": 5,
+          "avghumidity": 83,
+          "daily_will_it_rain": 0,
+          "daily_chance_of_rain": 0,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 0,
+          "condition": {
+            "text": "Солнечно",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+            "code": 1000
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:42 AM",
+          "sunset": "06:40 PM",
+          "moonrise": "07:39 AM",
+          "moonset": "11:23 AM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 26,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-07",
+        "date_epoch": 1709769600,
+        "day": {
+          "maxtemp_c": -0.5,
+          "maxtemp_f": 31.2,
+          "mintemp_c": -4.6,
+          "mintemp_f": 23.7,
+          "avgtemp_c": -2.9,
+          "avgtemp_f": 26.7,
+          "maxwind_mph": 5.4,
+          "maxwind_kph": 8.6,
+          "totalprecip_mm": 0.14,
+          "totalprecip_in": 0.01,
+          "totalsnow_cm": 0.07,
+          "avgvis_km": 8.5,
+          "avgvis_miles": 5,
+          "avghumidity": 83,
+          "daily_will_it_rain": 1,
+          "daily_chance_of_rain": 88,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 32,
+          "condition": {
+            "text": "Слабый переохлажденный дождь",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/311.png",
+            "code": 1198
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:39 AM",
+          "sunset": "06:42 PM",
+          "moonrise": "07:50 AM",
+          "moonset": "01:18 PM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 16,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-08",
+        "date_epoch": 1709856000,
+        "day": {
+          "maxtemp_c": 3.2,
+          "maxtemp_f": 37.7,
+          "mintemp_c": -2.6,
+          "mintemp_f": 27.4,
+          "avgtemp_c": -0.6,
+          "avgtemp_f": 30.9,
+          "maxwind_mph": 9.4,
+          "maxwind_kph": 15.1,
+          "totalprecip_mm": 0,
+          "totalprecip_in": 0,
+          "totalsnow_cm": 0,
+          "avgvis_km": 9.2,
+          "avgvis_miles": 5,
+          "avghumidity": 83,
+          "daily_will_it_rain": 0,
+          "daily_chance_of_rain": 0,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 0,
+          "condition": {
+            "text": "Облачно",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/119.png",
+            "code": 1006
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:36 AM",
+          "sunset": "06:45 PM",
+          "moonrise": "07:54 AM",
+          "moonset": "03:16 PM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 8,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      },
+      {
+        "date": "2024-03-09",
+        "date_epoch": 1709942400,
+        "day": {
+          "maxtemp_c": 0.4,
+          "maxtemp_f": 32.7,
+          "mintemp_c": -2.2,
+          "mintemp_f": 28.1,
+          "avgtemp_c": -0.6,
+          "avgtemp_f": 30.9,
+          "maxwind_mph": 8.5,
+          "maxwind_kph": 13.7,
+          "totalprecip_mm": 0.16,
+          "totalprecip_in": 0.01,
+          "totalsnow_cm": 0.12,
+          "avgvis_km": 9,
+          "avgvis_miles": 5,
+          "avghumidity": 87,
+          "daily_will_it_rain": 1,
+          "daily_chance_of_rain": 82,
+          "daily_will_it_snow": 0,
+          "daily_chance_of_snow": 53,
+          "condition": {
+            "text": "Небольшой снег",
+            "icon": "//cdn.weatherapi.com/weather/64x64/day/326.png",
+            "code": 1213
+          },
+          "uv": 1
+        },
+        "astro": {
+          "sunrise": "07:33 AM",
+          "sunset": "06:47 PM",
+          "moonrise": "07:55 AM",
+          "moonset": "05:10 PM",
+          "moon_phase": "Waning Crescent",
+          "moon_illumination": 3,
+          "is_moon_up": 0,
+          "is_sun_up": 0
+        },
+        "hour": []
+      }
+    ]
+  }
+}
