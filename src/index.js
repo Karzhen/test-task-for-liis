@@ -2,9 +2,11 @@ import './index.html';
 import './styles.css';
 import * as THREE from "three";
 import html2canvas from 'html2canvas';
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import {TrackballControls} from "three/addons";
 
 const apiKey = 'a185ab65134b4049bb4204901240203';
-const city = 'Saint Petersburg'; // Замените на желаемый город
+const city = 'Saint Petersburg';
 const urlWeek = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=7&hour=24&lang=ru`;
 
 function fetchWeekWeather() {
@@ -15,7 +17,6 @@ function fetchWeekWeather() {
             const currentWeatherDiv = document.getElementById('currentWeather');
             const currentWeatherType = data.current.condition.text;
 
-            // Добавление соответствующего класса градиента
             currentWeatherDiv.classList.add(`weather-gradient-${data.current.condition.code}`);
             currentWeatherDiv.innerHTML = `
                 <p>Текущая погода: ${currentWeatherType}, ${data.current.temp_c}°C</p>
@@ -37,10 +38,11 @@ function fetchWeekWeather() {
                 listItem.innerHTML = `
                     <p class="daily__item-time">${day.date}: ${day.day.condition.text}</p>
                     <p class="daily__item-text">Max: ${day.day.maxtemp_c}°C<br>Min: ${day.day.mintemp_c}°C</p>
-                    <img src=".${imagePath}" alt="${imageAlt}" class="daily__item-image">
+                    <img src=".${imageUrl}" alt="${imageAlt}" class="daily__item-image">
                 `;
                 dailyForecastList.appendChild(listItem);
             });
+            makeCubeTextures();
         })
         .catch(error => console.error('Ошибка при загрузке данных о погоде:', error));
 }
@@ -81,8 +83,6 @@ function fetchDayWeather() {
                         forecast = forecast.concat(nextDayData.forecast.forecastday[0].hour);
                         remainingHours = 24;
                         displayHourlyForecast(forecast, hourlyForecastList, remainingHours);
-
-                        // makeScreenshot()
                     })
                     .catch(error => console.error('Ошибка при загрузке данных о погоде на следующий день:', error));
             } else {
@@ -153,40 +153,72 @@ function makeScreenshot() {
             });
         });
     });
+}
 
+function makeCubeTextures() {
+    const elements = document.querySelectorAll('.daily__list-item');
+    const textures = [];
+    let loadedTexturesCount = 0;
+
+    elements.forEach((element, index) => {
+        html2canvas(element).then(function (canvas) {
+            const texture = new THREE.CanvasTexture(canvas);
+            textures[index] = texture;
+            loadedTexturesCount++;
+
+            if (loadedTexturesCount === elements.length) {
+                updateCube(textures);
+            }
+        });
+    });
 }
 
 
-function fetchWeatherData() {
-    fetchDayWeather();
-    fetchWeekWeather();
-    var scene = new THREE.Scene();
+function updateCube(textures) {
+    const scene = new THREE.Scene();
 
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 5;
 
-    var renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setClearColor(0x000000, 0.3);
+    const container = document.querySelector('.canvas-container');
+    const width = container.offsetWidth;
+    const height = Math.min(container.offsetHeight, window.innerHeight);
+    renderer.setSize(width, height);
+    container.appendChild(renderer.domElement);
 
-    var textureLoader = new THREE.TextureLoader();
-    var texture = textureLoader.load('//cdn.weatherapi.com/weather/64x64/night/113.png');
 
-    var material = new THREE.MeshBasicMaterial({ map: texture });
+    const controls = new TrackballControls(camera, renderer.domElement);
 
-    var geometry = new THREE.BoxGeometry(2, 2, 2);
+    const materials = textures.map(texture => new THREE.MeshBasicMaterial({ map: texture }));
 
-    var cube = new THREE.Mesh(geometry, material);
+    const geometry = new THREE.BoxGeometry(2, 2, 2);
+
+    const cube = new THREE.Mesh(geometry, materials);
+
+    const currentDate = new Date();
+    const todayIndex = currentDate.getDay() - 1;
+
+    const angle = -Math.PI / 2 * (todayIndex + 1);
+
+    cube.rotation.y = angle;
 
     scene.add(cube);
 
     function animate() {
         requestAnimationFrame(animate);
-        cube.rotation.x += 0.01;
-        cube.rotation.y += 0.01;
+        controls.update();
         renderer.render(scene, camera);
     }
     animate();
+}
+
+
+
+function fetchWeatherData() {
+    fetchDayWeather();
+    fetchWeekWeather();
 }
 
 window.onload = fetchWeatherData;

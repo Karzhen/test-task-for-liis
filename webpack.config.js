@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const baseConfig = {
     entry: {
@@ -23,14 +24,13 @@ const baseConfig = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.(png|jpe?g|gif|svg)$/i,
+                test: /\.(png|jpg|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader',
                         options: {
-                            name: '[name].[ext]',
-                            outputPath: 'images'
-                        }
+                            outputPath: 'weather',
+                        },
                     },
                 ],
             },
@@ -47,6 +47,18 @@ const baseConfig = {
         //     outputPath: '',
         //     publicPath: '/favicon',
         // }),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: './src/weather/64x64/day',
+                    to: 'weather/64x64/day',
+                },
+                {
+                    from: './src/weather/64x64/night',
+                    to: 'weather/64x64/night',
+                },
+            ],
+        }),
     ],
 }
 
